@@ -1,0 +1,52 @@
+<div class="formgrid grid">
+  <div class="col-6">
+    <p-panel header="RECEPCIONES CARMEN">
+      <form [formGroup]="form" (ngSubmit)="onSubmit()" class="p-fluid">
+        <div class="field">
+          <label>ID:</label>
+          <input type="number" pInputText formControlName="id"/>
+        </div>
+        <div class="field">
+          <label>Nombre del recepcionista:</label>
+          <input type="text" pInputText formControlName="nombre"/>
+          <small *ngIf="form.controls['nombre'].errors && form.controls['nombre'].touched">
+            Tiene errores
+          </small>
+        </div>
+        <div class="field">
+          <label>Numero de personas:</label>
+          <p-inputNumber inputId="persona"
+                        formControlName="persona"
+                        [showButtons]="true"
+                        [min]="0"
+                        [step]="5"
+          ></p-inputNumber>
+        </div>
+        <div class="field">
+          <label>Fecha de recepcion:</label>
+          <p-calendar inputId="fecha"
+                      dateFormat="dd.mm.yy"
+                      formControlName="fecha"
+                      [showIcon]="true"
+          ></p-calendar>
+        </div>
+        <div class="field">
+          <label>Hora de Recepcion:</label>
+          <input type="time">
+        </div>
+        <div class="field">
+          <label>State:</label>
+          <p-inputSwitch inputId="state"
+                        formControlName="state"
+          ></p-inputSwitch>
+        </div>
+        <div class="field">
+          <button pButton type="submit" label="Guardar"></button>
+          <button pButton type="button" class="p-button-warning" label="Actualizar" (click)="updatePerson()"></button>
+          <button pButton type="button" class="p-button-success" label="Ver Listado" [routerLink]="['/person-list']"></button>
+        </div>
+      </form>
+    </p-panel>
+  </div>
+</div>
+{{form.value|json}}
