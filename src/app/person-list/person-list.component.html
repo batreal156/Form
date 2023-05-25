@@ -4,10 +4,13 @@
     <tr>
       <th>Id</th>
       <th>Nombre recepcionista</th>
-      <th>Numper de personas</th>
+      <th>Numero de personas</th>
       <th>Fecha de recepcionh</th>
       <th>Hora de recepcion</th>
+      <th>Precio</th>
+      <th>Color elegido</th>
       <th>Estado</th>
+      <th>calificacion</th>
       <th>Opciones</th>
     </tr>
   </ng-template>
@@ -18,7 +21,10 @@
       <td>{{item.persona}}</td>
       <td>{{item.fecha}}</td>
       <td>{{item.hora}}</td>
+      <td>{{item.precio}}</td>
+      <td>{{item.color}}</td>
       <td>{{item.state}}</td>
+      <td>{{item.value}}</td>
       <td>
         <button pButton type="button" class="p-button-warning" icon="pi pi-pencil"
                 (click)="editPerson(item)"></button>

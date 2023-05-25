@@ -13,7 +13,10 @@ export class PersonComponent {
   persona: number = 0;
   fecha: Date = new Date();
   hora: string = '';
+  precio: number = 0;
+  color: boolean = false;
   state: boolean = false;
+  value: boolean = false;
 
   form: FormGroup;//Reactive Form
 
@@ -26,7 +29,10 @@ export class PersonComponent {
         persona: [this.peopleService.selectedPerson.persona, [Validators.min(1)]],
         fecha: [this.peopleService.selectedPerson.fecha],
         hora: [this.peopleService.selectedPerson.hora],
+        precio: [this.peopleService.selectedPerson.precio],
+        color: [this.peopleService.selectedPerson.color, []],
         state: [this.peopleService.selectedPerson.state, []],
+        value: [this.peopleService.selectedPerson.value, []],
       });
     } else {
       this.form = formBuilder.group({
@@ -35,7 +41,10 @@ export class PersonComponent {
         persona: [0, [Validators.min(1)]],
         fecha: [new Date()],
         hora: [0],
+        precio: [0],
+        color:  [false, []],
         state: [false, []],
+        value: [false, []],
       });
     }
   }

@@ -14,6 +14,11 @@ import {PanelModule} from "primeng/panel";
 import {PersonComponent} from "./person/person.component";
 import { PersonListComponent } from './person-list/person-list.component';
 import {TableModule} from "primeng/table";
+import { RatingModule } from 'primeng/rating';
+import { ColorPickerModule } from 'primeng/colorpicker';
+import { CheckboxModule } from 'primeng/checkbox';
+import { RadioButtonModule } from 'primeng/radiobutton';
+
 
 @NgModule({
   declarations: [
@@ -33,6 +38,10 @@ import {TableModule} from "primeng/table";
     InputTextModule,
     InputSwitchModule,
     CalendarModule,
+    RatingModule,
+    ColorPickerModule,
+    CheckboxModule,
+    RadioButtonModule,
     PanelModule,
     TableModule,
   ],
